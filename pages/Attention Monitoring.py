@@ -11,6 +11,7 @@ from datetime import datetime
 import os
 import collections
 import numpy as np
+import pygame
 
 
 class AngleBuffer:
@@ -481,37 +482,46 @@ while cap.isOpened() and start_button:
         l_dx, l_dy = vector_position(mesh_points[LEFT_EYE_OUTER_CORNER], center_left)
         r_dx, r_dy = vector_position(mesh_points[RIGHT_EYE_OUTER_CORNER], center_right)
 
+        pygame.mixer.init()
+        pygame.mixer.music.load("beep.wav")
+
+
+
         beep = False
         if last_200_frames.count("Right") > 120:
             #play beep sound
             beep = True
             last_beep = last_beep + 1
-            music.audio("beep.wav" , autoplay= True)
+            # music.audio("beep.wav" , autoplay= True)
+            pygame.mixer.music.play()
             
         if last_200_frames.count("Left") > 120:
             #play beep sound
             beep = True
             last_beep = last_beep + 1
-            music2.audio("beep.wav" , autoplay= True)
+            # music2.audio("beep.wav" , autoplay= True)
+            pygame.mixer.music.play()
 
         if last_200_frames.count("Up") > 120:
             #play beep sound
             beep = True
             last_beep = last_beep + 1
-            music.audio("beep.wav" , autoplay= True)
+            # music.audio("beep.wav" , autoplay= True)
+            pygame.mixer.music.play()
 
         if last_200_frames.count("Down") > 120:
             #play beep sound
             beep = True
             last_beep = last_beep + 1
-            music.audio("beep.wav" , autoplay= True)
+            # music.audio("beep.wav" , autoplay= True)
+            pygame.mixer.music.play()
 
-        if beep == True and last_beep > 20:
-            with open("beep.txt", "w") as f:
-                f.write("Beep")
-        else:
-            with open("beep.txt", "w") as f:
-                f.write("No Beep")
+        # if beep == True and last_beep > 20:
+        #     with open("beep.txt", "w") as f:
+        #         f.write("Beep")
+        # else:
+        #     with open("beep.txt", "w") as f:
+        #         f.write("No Beep")
 
 
 
