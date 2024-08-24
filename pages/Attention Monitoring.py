@@ -14,6 +14,20 @@ import numpy as np
 import pygame
 
 
+st.markdown(
+         f"""
+         <style>
+         .stApp {{
+             background-image: url("https://img.freepik.com/free-vector/neon-grid-background_53876-91657.jpg");
+             background-attachment: fixed;
+             background-size: cover
+         }}
+         </style>
+         """,
+         unsafe_allow_html=True
+     )
+
+
 class AngleBuffer:
     def __init__(self, size=40):
         self.size = size
