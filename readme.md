@@ -62,7 +62,7 @@ LLM with Gemini and RAG: Combined LLM with Gemini and RAG to create a chatbot th
 
 - install streamlit
 - pip install
-    - cv2
+    - opencv-python
     - numpy
     - mediapipe
     - collections
