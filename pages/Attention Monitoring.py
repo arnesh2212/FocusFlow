@@ -13,6 +13,7 @@ import collections
 import numpy as np
 import pygame
 
+st.set_page_config(layout= "centered")
 
 st.markdown(
          f"""
