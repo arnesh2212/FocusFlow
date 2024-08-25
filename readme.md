@@ -78,6 +78,7 @@ LLM with Gemini and RAG: Combined LLM with Gemini and RAG to create a chatbot th
     - langchain_google_genai
     - Ipython
     - PyTorch
+    - langflow
 
 ### Run this to load forntend and backend for viewing
 
