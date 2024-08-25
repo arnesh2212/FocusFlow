@@ -21,13 +21,7 @@ from langchain_google_genai import GoogleGenerativeAIEmbeddings, ChatGoogleGener
 import os
 import io
 import streamlit as st
-from streamlit_js_eval import streamlit_js_eval
-import streamlit as st
-from streamlit_js_eval import streamlit_js_eval
 
-import streamlit as st
-from streamlit_js_eval import streamlit_js_eval
-import streamlit as st
 
 ##Eras chat history
 st.session_state.messages = [
