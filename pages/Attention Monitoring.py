@@ -14,12 +14,11 @@ import numpy as np
 import pygame
 st.set_page_config(layout= "centered")
 
-
 st.markdown(
          f"""
          <style>
          .stApp {{
-             background-image: url("https://img.freepik.com/free-vector/gradient-dynamic-lines-background_23-2148998023.jpg?t=st=1724554542~exp=1724558142~hmac=2c1cf32bfc43b2b68f9c4017c9f1f2c849c18b2897c0dd48d6ce5cc970397756&w=996");
+             background-image: url("https://img.freepik.com/free-vector/gradient-purple-colorful-background-modern-wave-abstract_343694-2280.jpg?t=st=1724554396~exp=1724557996~hmac=4de036af7b28c4cfd3435c9de395c3551388a7141c8733029c729522e251af6e&w=1060");
              background-attachment: fixed;
              background-size: cover
          }}
@@ -27,7 +26,6 @@ st.markdown(
          """,
          unsafe_allow_html=True
      )
-
 
 class AngleBuffer:
     def __init__(self, size=40):

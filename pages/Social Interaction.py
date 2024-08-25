@@ -20,32 +20,7 @@ from langchain.vectorstores import Chroma
 from langchain_google_genai import GoogleGenerativeAIEmbeddings, ChatGoogleGenerativeAI
 import os
 import io
-import streamlit as st
-from streamlit_js_eval import streamlit_js_eval
-import streamlit as st
-from streamlit_js_eval import streamlit_js_eval
 
-import streamlit as st
-from streamlit_js_eval import streamlit_js_eval
-import streamlit as st
-
-##Eras chat history
-st.session_state.messages = [
-    dict(
-        role=MODEL_ROLE,
-        content="I am NeuroPal, your companion to help you study better. How can I help you?",
-        avatar=AI_AVATAR_ICON,
-    )
-]
-st.session_state.gemini_history = []
-joblib.dump(
-    st.session_state.messages,
-    f'data/{st.session_state.chat_id}-st_messages',
-)
-joblib.dump(
-    st.session_state.gemini_history,
-    f'data/{st.session_state.chat_id}-gemini_messages',
-)
 st.markdown(
          f"""
          <style>
@@ -142,7 +117,8 @@ try:
 except:
     past_chats = {}
 
-
+# Sidebar allows a list of past chats
+#Clears the chat when page opens
 if st.session_state.get('chat_id') is None:
     st.session_state.chat_id = None
     st.session_state.chat_title = None
@@ -151,7 +127,6 @@ if st.session_state.get('chat_id') is None:
 
 
 
-# Sidebar allows a list of past chats
 with st.sidebar:
     st.write('# Past Chats')
     if st.session_state.get('chat_id') is None:
@@ -174,10 +149,28 @@ with st.sidebar:
     # TODO: Give user a chance to name chat
     st.session_state.chat_title = f'ChatSession-{st.session_state.chat_id}'
 
-st.write('# Chat with NeuroPal')
+st.write('# Here you can practice your social interaction ')
 
 # Chat history (allows to ask multiple questions)
 # Chat history (allows to ask multiple questions)
+
+#Eras chat history
+st.session_state.messages = [
+    dict(
+        role=MODEL_ROLE,
+        content="Hey, What's up?",
+        avatar=AI_AVATAR_ICON,
+    )
+]
+st.session_state.gemini_history = []
+joblib.dump(
+    st.session_state.messages,
+    f'data/{st.session_state.chat_id}-st_messages',
+)
+joblib.dump(
+    st.session_state.gemini_history,
+    f'data/{st.session_state.chat_id}-gemini_messages',
+)
 try:
     st.session_state.messages = joblib.load(
         f'data/{st.session_state.chat_id}-st_messages'
@@ -190,7 +183,7 @@ except:
     st.session_state.messages = [
         dict(
             role=MODEL_ROLE,
-            content="I am NeuroPal, your companion to help you study better. How can I help you?",
+            content="Hey, What's up?",
             avatar=AI_AVATAR_ICON,
         )
     ]
@@ -228,8 +221,7 @@ if prompt := st.chat_input('Your message here...'):
     ## Send message to AI
     #rea = question_answering(prompt)
     response = st.session_state.chat.send_message(
-        
-        "You are a chatbot to help neurodiverse students study better, So answer the following question accordingly, Our app also has other features like a timer, To-Do list, and a attention Monitor ,If the user asks general questions like hi,hello then answer normally, dont give very long answers" + prompt,
+        "You are a chatbot designed to teach students social interaction. Interact like you are also a fellow student like the user without referencing you are a chatbot , answer briefly asking the user intresting social question (only 1) "  + prompt,
         stream=True,
     )
     # Display assistant response in chat message container
