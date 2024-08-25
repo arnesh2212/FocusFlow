@@ -2,6 +2,18 @@ import streamlit as st
 import time
 from IPython.display import HTML
 st.set_page_config(layout= "centered")
+st.markdown(
+         f"""
+         <style>
+         .stApp {{
+             background-image: url("https://img.freepik.com/free-vector/abstract-background-with-colorful-shape_361591-2095.jpg?t=st=1724554614~exp=1724558214~hmac=63b43e9dab01d00c78602709e751d592e2a266f87256b6ed50ecf08dbfbbece7&w=1380");
+             background-attachment: fixed;
+             background-size: cover
+         }}
+         </style>
+         """,
+         unsafe_allow_html=True
+     )
 
 def pomodoro_timer(pomodoro_length, short_break_length, long_break_length, long_break_interval):
     
@@ -45,7 +57,25 @@ def countdown(timer_length, title):
 # Streamlit app code
 st.title("Pomodoro Timer")
 
-music_file = st.file_uploader("Upload Music File (mp3 format)", type=["mp3"])
+# music_file = st.file_uploader("Upload Music File (mp3 format)", type=["mp3"])
+
+# Style the text
+st.markdown(
+    """
+    <style>
+    .custom-text {
+        font-size: 20px;
+        font-weight: bold;
+        margin-bottom: -50px;  /* Adjust this value to reduce the gap */
+    }
+    </style>
+    <h2 class="custom-text">Upload Music File (mp3 format)</h2>
+    """,
+    unsafe_allow_html=True
+)
+
+# File uploader
+music_file = st.file_uploader("", type=["mp3"])
 
 if music_file is not None:
     st.audio(music_file, format="audio/mp3", start_time=0)
@@ -62,7 +92,15 @@ if music_file is not None:
 #          """,
 #          unsafe_allow_html=True
 #      )
-st.write("Welcome to the Pomodoro Timer! Please enter the following values:")
+# st.write("Welcome to the Pomodoro Timer! Please enter the following values:")
+
+# Use st.markdown to style text
+st.markdown(
+    """
+    <h4>Please enter the following values:</h4>
+    """,
+    unsafe_allow_html=True
+)
 
 pomodoro_length = st.number_input("Pomodoro Length (minutes)", min_value=1, step=1, value=25)
 short_break_length = st.number_input("Short Break Length (minutes)", min_value=1, step=1, value=5)

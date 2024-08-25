@@ -21,6 +21,19 @@ from langchain_google_genai import GoogleGenerativeAIEmbeddings, ChatGoogleGener
 import os
 import io
 
+st.markdown(
+         f"""
+         <style>
+         .stApp {{
+             background-image: url("https://img.freepik.com/free-vector/gradient-purple-colorful-background-modern-wave-abstract_343694-2280.jpg?t=st=1724554396~exp=1724557996~hmac=4de036af7b28c4cfd3435c9de395c3551388a7141c8733029c729522e251af6e&w=1060");
+             background-attachment: fixed;
+             background-size: cover
+         }}
+         </style>
+         """,
+         unsafe_allow_html=True
+     )
+
 
 import os
 import re

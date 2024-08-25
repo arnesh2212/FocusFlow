@@ -1,4 +1,4 @@
-FILEPATH = "/home/arnesh/Desktop/TECH SPECTRE/pages/tdos.txt"
+FILEPATH = "C://Users//govin//OneDrive//Documents//GitHub//FocusFlow//pages//tdos.txt"
 
 class functions:
     def get_tdos(filepath=FILEPATH):

@@ -12,14 +12,14 @@ import os
 import collections
 import numpy as np
 import pygame
-
 st.set_page_config(layout= "centered")
+
 
 st.markdown(
          f"""
          <style>
          .stApp {{
-             background-image: url("https://img.freepik.com/free-vector/neon-grid-background_53876-91657.jpg");
+             background-image: url("https://img.freepik.com/free-vector/gradient-dynamic-lines-background_23-2148998023.jpg?t=st=1724554542~exp=1724558142~hmac=2c1cf32bfc43b2b68f9c4017c9f1f2c849c18b2897c0dd48d6ce5cc970397756&w=996");
              background-attachment: fixed;
              background-size: cover
          }}
@@ -323,13 +323,30 @@ if ENABLE_HEAD_POSE:
 
 
 #Prompt
-st.markdown("<h1 style='text-align: center; color: white;'>Attention Monitoring</h1>", unsafe_allow_html=True)
+# st.markdown("<h1 style='text-align: center; color: white;font:Times New Roman'>Attention Monitoring</h1>", unsafe_allow_html=True)
+
+st.markdown(
+    """
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <h1 style='text-align: center; color: white; font-family: "Poppins", sans-serif; font-weight: 700;'>Attention Monitoring</h1>
+    """, 
+    unsafe_allow_html=True
+)
 
 
 last_200_frames = []
 last_beep = 0
+
 #text box to take yt link
-st.markdown("<h3 style='text-align: center; color: white;'>Enter the Youtube Video Link</h3>", unsafe_allow_html=True)
+# st.markdown("<p style='text-align: center;font-size:28px; color: white;'>Enter the Youtube Video Link</p>", unsafe_allow_html=True)
+st.markdown(
+    "<p style='text-align: center; font-size:28px; color: white; font-style: italic;'>Enter the Youtube Video Link</p>",
+    unsafe_allow_html=True
+)
+
+
 yt_link = st.text_input(label="",value= "https://www.youtube.com/watch?v=EAR7De6Goz4&list=PLgUwDviBIf0oF6QL8m22w1hIDC1vJ_BHz&index=3" )
 #dsiplay the video
 st.video(yt_link)
