@@ -27,9 +27,13 @@ st.markdown(
                 <meta charset="UTF-8">
                 <meta name="viewport" content="width=device-width, initial-scale=1.0">
                 <title>Embedded Website</title>
+                
+
+
                 <style>
+                    @import url('https://fonts.googleapis.com/css2?family=New+Amsterdam&display=swap');
                     body {
-                        font-family: Arial, sans-serif;
+                        font-family: "New Amsterdam", "sans-serif";
                         margin: 0;
                         padding: 0;
                         display: flex;
