@@ -1,4 +1,5 @@
 FILEPATH = "/home/arnesh/Desktop/TECH SPECTRE/pages/tdos.txt"
+
 class functions:
     def get_tdos(filepath=FILEPATH):
         with open(filepath, 'r') as file_local:
@@ -10,6 +11,7 @@ class functions:
             file.writelines(tdos_arg)
 
 import streamlit as st
+st.set_page_config(layout= "centered")
 
 # Load existing tasks
 tdos = functions.get_tdos()

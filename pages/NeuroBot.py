@@ -8,6 +8,7 @@ google_api_key = "AIzaSyAfNuOsINiHgzSBPdFJaSC_UqoIV35tiJE"
 os.environ["GOOGLE_API_KEY"] = google_api_key
 GOOGLE_API_KEY=os.environ.get('GOOGLE_API_KEY')
 genai.configure(api_key=GOOGLE_API_KEY)
+st.set_page_config(layout= "centered")
 
 new_chat_id = f'{time.time()}'
 MODEL_ROLE = 'ai'

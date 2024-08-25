@@ -1,6 +1,7 @@
 import streamlit as st
 import time
 from IPython.display import HTML
+st.set_page_config(layout= "centered")
 
 def pomodoro_timer(pomodoro_length, short_break_length, long_break_length, long_break_interval):
     
