@@ -117,13 +117,6 @@ try:
 except:
     past_chats = {}
 
-# Sidebar allows a list of past chats
-#Clears the chat when page opens
-if st.session_state.get('chat_id') is None:
-    st.session_state.chat_id = None
-    st.session_state.chat_title = None
-    st.session_state.messages = []
-    st.session_state.gemini_history = []
 
 
 
@@ -154,23 +147,7 @@ st.write('# Here you can practice your social interaction ')
 # Chat history (allows to ask multiple questions)
 # Chat history (allows to ask multiple questions)
 
-#Eras chat history
-st.session_state.messages = [
-    dict(
-        role=MODEL_ROLE,
-        content="Hey, What's up?",
-        avatar=AI_AVATAR_ICON,
-    )
-]
-st.session_state.gemini_history = []
-joblib.dump(
-    st.session_state.messages,
-    f'data/{st.session_state.chat_id}-st_messages',
-)
-joblib.dump(
-    st.session_state.gemini_history,
-    f'data/{st.session_state.chat_id}-gemini_messages',
-)
+
 try:
     st.session_state.messages = joblib.load(
         f'data/{st.session_state.chat_id}-st_messages'

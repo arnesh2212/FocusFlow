@@ -23,23 +23,7 @@ import io
 import streamlit as st
 
 
-##Eras chat history
-st.session_state.messages = [
-    dict(
-        role=MODEL_ROLE,
-        content="I am NeuroPal, your companion to help you study better. How can I help you?",
-        avatar=AI_AVATAR_ICON,
-    )
-]
-st.session_state.gemini_history = []
-joblib.dump(
-    st.session_state.messages,
-    f'data/{st.session_state.chat_id}-st_messages',
-)
-joblib.dump(
-    st.session_state.gemini_history,
-    f'data/{st.session_state.chat_id}-gemini_messages',
-)
+
 st.markdown(
          f"""
          <style>
@@ -136,12 +120,6 @@ try:
 except:
     past_chats = {}
 
-
-if st.session_state.get('chat_id') is None:
-    st.session_state.chat_id = None
-    st.session_state.chat_title = None
-    st.session_state.messages = []
-    st.session_state.gemini_history = []
 
 
 

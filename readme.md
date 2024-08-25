@@ -88,3 +88,5 @@ streamlit run home.py
 ## Developers :
 
 [Arnesh Batra](https://github.com/arnesh2212) , [Anushk kumar](https://github.com/berserk-23115) , [Govind kumar](https://github.com/darkyll) , [Krish Marwah](https://github.com/krishmarwah)
+
+NOTE : If error comes in NeuroPal, just reload the site and it will work fine
